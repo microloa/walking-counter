@@ -4,6 +4,7 @@ input.onButtonPressed(Button.A, function () {
 })
 input.onButtonPressed(Button.AB, function () {
     count = 0
+    basic.showNumber(count)
 })
 input.onGesture(Gesture.Shake, function () {
     count += 1
