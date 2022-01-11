@@ -7,6 +7,7 @@ input.onButtonPressed(Button.A, function () {
     } else {
         display = 0
     }
+    displayCount()
 })
 function displayCount () {
     if (display == 1) {
