@@ -8,4 +8,5 @@ input.onButtonPressed(Button.AB, function () {
 })
 input.onGesture(Gesture.Shake, function () {
     count += 1
+    music.playTone(Note.C, music.beat())
 })
