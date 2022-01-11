@@ -1,11 +1,23 @@
+let display = 0
 let count = 0
 let mute = 0
 input.onButtonPressed(Button.A, function () {
-    basic.showNumber(count)
+    if (display == 0) {
+        display = 1
+    } else {
+        display = 0
+    }
 })
+function displayCount () {
+    if (display == 1) {
+        basic.showNumber(count)
+    } else {
+        basic.clearScreen()
+    }
+}
 input.onButtonPressed(Button.AB, function () {
     count = 0
-    basic.showNumber(count)
+    displayCount()
 })
 input.onButtonPressed(Button.B, function () {
     if (mute == 0) {
@@ -19,5 +31,5 @@ input.onGesture(Gesture.Shake, function () {
     if (!(mute == 1)) {
         music.playTone(262, music.beat(BeatFraction.Quarter))
     }
-    basic.showNumber(count)
+    displayCount()
 })
